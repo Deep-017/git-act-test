@@ -13,7 +13,7 @@ jobs:
           echo "job was triggered by : ${{ github.event_name }}
           echo "name of branch is ${{ github.ref }} and your repository is ."
 
-      - uses: actions/checkout@4.1.1
+      - uses: actions/checkout@4
 
       - name: List files in the repository
         run: |
