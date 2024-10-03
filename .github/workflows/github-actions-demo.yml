@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - '.github/**'
   pull_request:
     branches:
       - main
@@ -12,9 +14,13 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        description: 'Environment to deploy to'
-        type: environment
+        description: 'Deployment environment'
         required: true
+        type: environment
+        options:
+          - Test
+          - Load-Test
+          - Production
 
 jobs:
   build:
